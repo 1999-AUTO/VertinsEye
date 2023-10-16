@@ -1,0 +1,7 @@
+
+train: /Users/a1/Desktop/1999-Auto-main/card_models/images # train images (relative to 'path') 128 images
+val: /Users/a1/Desktop/1999-Auto-main/card_models/images  # val images (relative to 'path') 128 images
+
+# Classes
+nc: 66  # number of classes
+names: ['Eternity1', 'Eternity2', 'Eternity3', 'MedicinePocket1', 'MedicinePocket2', 'MedicinePocket3', 'NewBabel1', 'NewBabel2', 'NewBabel3', 'Anan1', 'Anan2', 'Anan3', 'Sotheby1', 'Sotheby2', 'Sotheby3', 'Druvis1', 'Druvis2', 'Druvis3', 'Voyager1', 'Voyager2', 'Voyager3', 'Knight1', 'Knight2', 'Knight3', 'Lilya1', 'Lilya2', 'Lilya3', 'Regulus1', 'Regulus2', 'Regulus3', 'Centurion1', 'Centurion2', 'Centurion3', 'Bkornblume1', 'Bkornblume2', 'Bkornblume3', 'Sonetto1', 'Sonetto2', 'Sonetto3', 'BalloonParty1', 'BalloonParty2', 'BalloonParty3', 'Click1', 'Click2', 'Click3', 'X1', 'X2', 'X3', 'Tennant1', 'Tennant2', 'Tennant3', 'Sweetheart1', 'Sweetheart2', 'Sweetheart3', 'Satsuki1', 'Satsuki2', 'Satsuki3', 'BabyBlue1', 'BabyBlue2', 'BabyBlue3', 'Necrologist1', 'Necrologist2', 'Necrologist3', 'Dikke1', 'Dikke2', 'Dikke3']
