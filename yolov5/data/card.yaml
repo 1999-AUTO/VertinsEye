@@ -1,6 +1,9 @@
 
-train: /Users/a1/Desktop/1999-Auto-main/card_models/images # train images (relative to 'path') 128 images
-val: /Users/a1/Desktop/1999-Auto-main/card_models/images  # val images (relative to 'path') 128 images
+path: ../card_models/  # dataset root dir
+train: images/train
+val: images/val
+test: images/test
+# val: /Users/a1/Desktop/1999-Auto-main/card_models/images  # val images (relative to 'path') 128 images
 
 # Classes
 nc: 66  # number of classes

@@ -4,6 +4,7 @@ from tqdm import tqdm
 import numpy,sys,random
 import os
 import glob
+import json
 from loguru import logger
 
 from cards.aname import *
@@ -81,11 +82,9 @@ def get_skills():
 
 if __name__ == "__main__":
     random.seed(42)
-    try:
-        os.makedirs(r'card_models/images')
-        os.makedirs(r'card_models/labels')
-    except:
-        pass
+    for dataset_type in ['train', 'val', 'test']:
+        os.makedirs(f'card_models/images/{dataset_type}', exist_ok=True)
+        os.makedirs(f'card_models/labels/{dataset_type}', exist_ok=True)
     classes_file = open(r"card_models/labels/classes.txt", "w", encoding='utf-8')
     card_amount = 0
     for name_key in card_dict:
@@ -99,27 +98,54 @@ if __name__ == "__main__":
     bgrs = get_backgrounds()
     skills = get_skills()
     skill_names = list(skills.keys()) # for fast random access
+    name2idx = {name: idx for idx, name in enumerate(skill_names)}
+    json.dump(name2idx, open("name2idx.json", "w", encoding='utf-8'), ensure_ascii=False, indent=4)
 
+    tot_train = 1000
+    tot_val = tot_train * 0.1
+    tot_test = tot_train * 0.1
+    tot_all = tot_train + tot_val + tot_test
     image_counts = 0
-    while image_counts < 10:#生成十张图片
+    iter_bar = tqdm(total=tot_all)
+    while image_counts < tot_all:#生成十张图片
         img = random.choice(bgrs).copy()
         card_num = random.randint(4, 10) #每张图片放置4-10张卡牌
         card_position_list = Generate_Card(card_num, numpy.zeros_like(img))#平均每张图片放六张卡牌
 
-        if card_position_list != False:#如果生成的图片不存在覆盖现象
+        if card_position_list:#如果生成的图片不存在覆盖现象
             #画框
             # for card in card_position_list:
             #     img = cv2.rectangle(img, (card[0][0],card[0][1]),(card[3][0],card[3][1]), (0, 255, 0), 5)
             
+            labels = []
             for pos in card_position_list:
                 name = random.choice(card_list)
                 skill_img = skills[name]
-                skill_img = cv2.resize(skill_img, (pos[3][0]-pos[0][0], pos[3][1]-pos[0][1]))
+                cx, cy = (pos[0][0] + pos[3][0]) / 2, (pos[0][1] + pos[3][1]) / 2
+                w, h = pos[3][0] - pos[0][0], pos[3][1] - pos[0][1]
+                skill_img = cv2.resize(skill_img, (w, h))
                 img[pos[0][1]:pos[3][1], pos[0][0]:pos[3][0]] = skill_img
+                
+                cx, cy = cx / img.shape[1], cy / img.shape[0]
+                w, h = w / img.shape[1], h / img.shape[0]
+                labels.append((name2idx[name], cx, cy, w, h))
             
             image_counts += 1
             #显示
             # cv2.imshow("img", img)
             # cv2.waitKey(0)
             
-            cv2.imwrite(f"card_models/images/{image_counts}.jpg", img)
+            if image_counts <= tot_train:
+                dataset_type = 'train'
+            elif image_counts <= tot_train + tot_val:
+                dataset_type = 'val'
+            else:
+                dataset_type = 'test'
+            
+            cv2.imwrite(f"card_models/images/{dataset_type}/{image_counts}.jpg", img)
+            # write label
+            with open(f"card_models/labels/{dataset_type}/{image_counts}.txt", "w", encoding='utf-8') as f:
+                for label in labels:
+                    f.write(f"{label[0]} {label[1]} {label[2]} {label[3]} {label[4]}\n")
+            
+            iter_bar.update(1)
