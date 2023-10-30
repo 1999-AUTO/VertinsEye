@@ -7,4 +7,74 @@ test: images/test
 
 # Classes
 nc: 66  # number of classes
-names: ['Eternity1', 'Eternity2', 'Eternity3', 'MedicinePocket1', 'MedicinePocket2', 'MedicinePocket3', 'NewBabel1', 'NewBabel2', 'NewBabel3', 'Anan1', 'Anan2', 'Anan3', 'Sotheby1', 'Sotheby2', 'Sotheby3', 'Druvis1', 'Druvis2', 'Druvis3', 'Voyager1', 'Voyager2', 'Voyager3', 'Knight1', 'Knight2', 'Knight3', 'Lilya1', 'Lilya2', 'Lilya3', 'Regulus1', 'Regulus2', 'Regulus3', 'Centurion1', 'Centurion2', 'Centurion3', 'Bkornblume1', 'Bkornblume2', 'Bkornblume3', 'Sonetto1', 'Sonetto2', 'Sonetto3', 'BalloonParty1', 'BalloonParty2', 'BalloonParty3', 'Click1', 'Click2', 'Click3', 'X1', 'X2', 'X3', 'Tennant1', 'Tennant2', 'Tennant3', 'Sweetheart1', 'Sweetheart2', 'Sweetheart3', 'Satsuki1', 'Satsuki2', 'Satsuki3', 'BabyBlue1', 'BabyBlue2', 'BabyBlue3', 'Necrologist1', 'Necrologist2', 'Necrologist3', 'Dikke1', 'Dikke2', 'Dikke3']
+
+names:
+  0: Anan1
+  1: Anan2
+  2: Anan3
+  3: Eternity1
+  4: Eternity2
+  5: Eternity3
+  6: Bkornblume1
+  7: Bkornblume2
+  8: Bkornblume3
+  9: MedicinePocket1
+  10: MedicinePocket2
+  11: MedicinePocket3
+  12: Knight1
+  13: Knight2
+  14: Knight3
+  15: Voyager1
+  16: Voyager2
+  17: Voyager3
+  18: NewBabel1
+  19: NewBabel2
+  20: NewBabel3
+  21: Sotheby1
+  22: Sotheby2
+  23: Sotheby3
+  24: Druvis1
+  25: Druvis2
+  26: Druvis3
+  27: Lilya1
+  28: Lilya2
+  29: Lilya3
+  30: Regulus1
+  31: Regulus2
+  32: Regulus3
+  33: Centurion1
+  34: Centurion2
+  35: Centurion3
+  36: Sonetto1
+  37: Sonetto2
+  38: Sonetto3
+  39: BalloonParty1
+  40: BalloonParty2
+  41: BalloonParty3
+  42: Click1
+  43: Click2
+  44: Click3
+  45: X1
+  46: X2
+  47: X3
+  48: Tennant1
+  49: Tennant2
+  50: Tennant3
+  51: Sweetheart1
+  52: Sweetheart2
+  53: Sweetheart3
+  54: Satsuki1
+  55: Satsuki2
+  56: Satsuki3
+  57: BabyBlue1
+  58: BabyBlue2
+  59: BabyBlue3
+  60: Necrologist1
+  61: Necrologist2
+  62: Necrologist3
+  63: Dikke1
+  64: Dikke2
+  65: Dikke3
+  66: None
+
+# names: ['Eternity1', 'Eternity2', 'Eternity3', 'MedicinePocket1', 'MedicinePocket2', 'MedicinePocket3', 'NewBabel1', 'NewBabel2', 'NewBabel3', 'Anan1', 'Anan2', 'Anan3', 'Sotheby1', 'Sotheby2', 'Sotheby3', 'Druvis1', 'Druvis2', 'Druvis3', 'Voyager1', 'Voyager2', 'Voyager3', 'Knight1', 'Knight2', 'Knight3', 'Lilya1', 'Lilya2', 'Lilya3', 'Regulus1', 'Regulus2', 'Regulus3', 'Centurion1', 'Centurion2', 'Centurion3', 'Bkornblume1', 'Bkornblume2', 'Bkornblume3', 'Sonetto1', 'Sonetto2', 'Sonetto3', 'BalloonParty1', 'BalloonParty2', 'BalloonParty3', 'Click1', 'Click2', 'Click3', 'X1', 'X2', 'X3', 'Tennant1', 'Tennant2', 'Tennant3', 'Sweetheart1', 'Sweetheart2', 'Sweetheart3', 'Satsuki1', 'Satsuki2', 'Satsuki3', 'BabyBlue1', 'BabyBlue2', 'BabyBlue3', 'Necrologist1', 'Necrologist2', 'Necrologist3', 'Dikke1', 'Dikke2', 'Dikke3']
