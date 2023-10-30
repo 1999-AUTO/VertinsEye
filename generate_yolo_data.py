@@ -1,9 +1,16 @@
-import cv2,time
+import cv2
+import time
 from tqdm import tqdm
 import numpy,sys,random
 import os
-sys.path.append(r"cards")#进入cards目录下
-from aname import *
+import glob
+from loguru import logger
+
+from cards.aname import *
+
+from typing import Optional
+
+Image = numpy.ndarray
 
 card_dict = name_to_english
 card_list = []
@@ -37,36 +44,43 @@ def Generate_Card(num,background_image):
     #生成num个卡牌实例对象
     for i in range(num):
         cards.append(Card(card_position_list))
-
-    for card in cards:
-         #如果卡牌坐标列表长度为0，则为首次生成，可直接添加信息
-        if len(card_position_list) == 0:
-            card_position_list.append([card.top_left,card.low_left,card.top_right,card.low_right])
-            cv2.rectangle(background_image,(card.top_left),(card.low_right), (32,43,232), 10)#画出生成的第一张卡牌
-        if True:
-            #生成的卡牌数量
-            for k in range(0,len(card_position_list)):
-                #每个卡牌的四个坐标点都需要判断是否重合
-                for dot in [card.top_left,card.low_left,card.top_right,card.low_right]:
-                    dot_x_pos = dot[0]
-                    dot_y_pos = dot[1]
-                    check_bool = card_position_list[k][0][0] < dot_x_pos < card_position_list[k][2][0] and card_position_list[k][0][1] < dot_y_pos < card_position_list[k][3][1]
-                    #给每个卡牌的左上角标上红点
-                    cv2.circle(background_image,(card_position_list[k][0][0],card_position_list[k][0][1]),10,(32,43,232),-1)
-                    if check_bool == True:#如果出现覆盖情况
-                        return False#返回假，即重新生成一轮
-         
-            #添加信息 
-            card_position_list.append([card.top_left,card.low_left,card.top_right,card.low_right])
-            
+    
+    #判断是否有重合
+    for i, card1 in enumerate(cards):
+        for j, card2 in enumerate(cards):
+            if i == j:
+                continue
+            for x, y in [card2.top_left,card2.low_left,card2.top_right,card2.low_right]:
+                if card1.top_left[0] < x < card1.top_right[0] and card1.top_left[1] < y < card1.low_left[1]:
+                    return False
+    card_position_list = [[card.top_left,card.low_left,card.top_right,card.low_right] for card in cards]
     #返回
     return card_position_list
-                        
-    
-        
-    
+
+def get_backgrounds(target_size: Optional[tuple[int, int]] = (1600, 900)):
+    fnames = glob.glob("background/*.jpg")
+    results: list[Image] = []
+    for fname in fnames:
+        img = cv2.imread(fname)
+        assert img is not None
+        results.append(img)
+    if target_size is not None:
+        results = [cv2.resize(img, target_size) for img in results]
+    return results
+
+def get_skills():
+    results: dict[str, Image] = {}
+    for name in card_reflect:
+        fname = f"cards/{name}.png"
+        img = cv2.imread(fname)
+        if img is None:
+            logger.warning(f"{fname} does not exist")
+            continue
+        results[name] = img
+    return results
+
 if __name__ == "__main__":
-    
+    random.seed(42)
     try:
         os.makedirs(r'card_models/images')
         os.makedirs(r'card_models/labels')
@@ -82,20 +96,30 @@ if __name__ == "__main__":
             card_list.append(card_string)
             card_amount += 1
 
+    bgrs = get_backgrounds()
+    skills = get_skills()
+    skill_names = list(skills.keys()) # for fast random access
 
     image_counts = 0
     while image_counts < 10:#生成十张图片
-        background = cv2.imread("background/1.jpg")
-        background = cv2.resize(background,(1600,900))
-        card_position_list = Generate_Card(6,background)#平均每张图片放六张卡牌
+        img = random.choice(bgrs).copy()
+        card_num = random.randint(4, 10) #每张图片放置4-10张卡牌
+        card_position_list = Generate_Card(card_num, numpy.zeros_like(img))#平均每张图片放六张卡牌
 
         if card_position_list != False:#如果生成的图片不存在覆盖现象
             #画框
-            for card in card_position_list:
-                background = cv2.rectangle(background,(card[0][0],card[0][1]),(card[3][0],card[3][1]), (0, 255, 0), 5)
+            # for card in card_position_list:
+            #     img = cv2.rectangle(img, (card[0][0],card[0][1]),(card[3][0],card[3][1]), (0, 255, 0), 5)
+            
+            for pos in card_position_list:
+                name = random.choice(card_list)
+                skill_img = skills[name]
+                skill_img = cv2.resize(skill_img, (pos[3][0]-pos[0][0], pos[3][1]-pos[0][1]))
+                img[pos[0][1]:pos[3][1], pos[0][0]:pos[3][0]] = skill_img
+            
             image_counts += 1
             #显示
-            cv2.imshow("img",background)
-            cv2.waitKey(0)
-
-    
+            # cv2.imshow("img", img)
+            # cv2.waitKey(0)
+            
+            cv2.imwrite(f"card_models/images/{image_counts}.jpg", img)
