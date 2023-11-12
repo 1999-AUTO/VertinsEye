@@ -19,14 +19,15 @@ card_list = []
 #卡牌对象类
 class Card:
     def __init__(self,card_position_list):
-        coefficient = random.uniform(0.8,1.2)
+        coefficient_h = random.uniform(0.8,1.2)
+        coefficient_w = random.uniform(0.8,1.2)
         
         #卡牌高按比例随机缩放
-        card_height = 209*coefficient
-        card_width = 160*coefficient
+        card_height = 209*coefficient_h
+        card_width = 160*coefficient_w
 
         #计算四个点的坐标
-        self.top_left = [random.randint(0,round(1600-160*coefficient)),random.randint(0,round(900-209*coefficient))]
+        self.top_left = [random.randint(0,round(1600-card_width)),random.randint(0,round(900-card_height))]
         self.low_left = [self.top_left[0],self.top_left[1]+card_height]
         self.top_right = [self.top_left[0]+card_width,self.top_left[1]]
         self.low_right = [self.top_left[0]+card_width,self.top_left[1]+card_height]
