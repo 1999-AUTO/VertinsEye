@@ -7,7 +7,10 @@ from loguru import logger
 with open('name2idx.json', 'r') as file:
     id_data = json.load(file)
 
-
+def get_id(card_index):
+        for key, value in id_data.items():
+            if value == card_index:
+                return key
 class VertinsEye:
     def __init__(self,device, yolo_path, model_path):
         try:
@@ -18,11 +21,6 @@ class VertinsEye:
             logger.info("The VertinsEye is initialized successfully")
         except Exception as e:
             logger.exception(f"The VertinsEye is initialization failed: {e}")
-     
-    def get_id(card_index):
-        for key, value in id_data.items():
-            if value == card_index:
-                return key
     
     def detect_card(self,image,size):
         #card_area = image[720:1080,0:2400]
@@ -42,7 +40,7 @@ class VertinsEye:
                 if conf >= 0.5:
                     #整合单个卡牌信息
                     card_info = {
-                        "class": VertinsEye.get_id(class_l),
+                        "class": get_id(class_l),
                         "position": [int(xmin), int(ymin), int(xmax), int(ymax),int(class_l)],
                         "level" : 1,
                     }
