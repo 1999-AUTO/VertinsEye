@@ -94,7 +94,7 @@ if __name__ == "__main__":
             classes_file.writelines(card_string+"\n")
             card_list.append(card_string)
             card_amount += 1
-
+            
     bgrs = get_backgrounds()
     skills = get_skills()
     skill_names = list(skills.keys()) # for fast random access
