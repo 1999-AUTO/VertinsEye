@@ -24,6 +24,7 @@ class VertinsEye:
     
     def detect_card(self,image,size):
         #card_area = image[720:1080,0:2400]
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # opencv读取图片为BGR格式，需要转换为RGB格式
         torch_model = self.torch_model.to(self.device)
         results = torch_model(image, size=size)#推理
         card_info_list = []  # 用于存储所有卡牌信息的列表
