@@ -1,0 +1,437 @@
+2023-12-01 20:27:16.612 | INFO     | __main__:<module>:79 - Program start
+2023-12-01 20:27:26.554 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 20:27:26.795 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 2400x1080 1 Sonetto1, 1 Sonetto3
+Speed: 12.0ms pre-process, 186.7ms inference, 12.6ms NMS per image at shape (1, 3, 640, 288)
+2023-12-01 20:27:26.798 | INFO     | __main__:detect_card:52 - Detect card successfully
+2023-12-01 21:09:52.708 | INFO     | __main__:<module>:79 - Program start
+2023-12-01 21:09:55.461 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 21:09:55.632 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 2400x1080 1 Sonetto1, 1 Sonetto3
+Speed: 5.2ms pre-process, 149.2ms inference, 1.6ms NMS per image at shape (1, 3, 640, 288)
+2023-12-01 21:09:55.635 | INFO     | __main__:detect_card:52 - Detect card successfully
+2023-12-01 21:10:42.442 | INFO     | __main__:<module>:79 - Program start
+2023-12-01 21:10:46.796 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 21:10:47.025 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.8ms pre-process, 206.9ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 21:10:47.028 | INFO     | __main__:detect_card:52 - Detect card successfully
+2023-12-01 22:29:53.528 | INFO     | __main__:<module>:82 - Program start
+2023-12-01 22:29:55.838 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 22:29:56.017 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 14.5ms pre-process, 147.1ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 22:29:56.019 | ERROR    | __main__:detect_card:58 - Detect card failed: 'numpy.ndarray' object has no attribute 'encode'
+Traceback (most recent call last):
+
+  File "/home/gavin/VertinsEye/detect_card.py", line 89, in <module>
+    cards = VertinsEye_card.detect_card(image,640)
+            │               │           └ array([[[42, 33, 27],
+            │               │                     [42, 33, 27],
+            │               │                     [42, 33, 27],
+            │               │                     ...,
+            │               │                     [41, 33, 26],
+            │               │                     [41, 33, 26],
+            │               │               ...
+            │               └ <function VertinsEye.detect_card at 0x7f7092d67dc0>
+            └ <__main__.VertinsEye object at 0x7f7092d680d0>
+
+> File "/home/gavin/VertinsEye/detect_card.py", line 51, in detect_card
+    cv2.imshow(level_area,"he")
+    │   │      └ array([[[108, 106, 108],
+    │   │                [ 71,  69,  71],
+    │   │                [ 19,  17,  19],
+    │   │                ...,
+    │   │                [ 46,  44,  46],
+    │   │                [ 56...
+    │   └ <function imshow at 0x7f708b9a1160>
+    └ <module 'cv2' from '/home/gavin/anaconda3/envs/yolov5/lib/python3.9/site-packages/cv2/__init__.py'>
+
+  File "/home/gavin/VertinsEye/yolov5/utils/general.py", line 1135, in imshow
+    imshow_(path.encode('unicode_escape').decode(), im)
+    │       │                                       └ 'he'
+    │       └ array([[[108, 106, 108],
+    │                 [ 71,  69,  71],
+    │                 [ 19,  17,  19],
+    │                 ...,
+    │                 [ 46,  44,  46],
+    │                 [ 56...
+    └ <built-in function imshow>
+
+AttributeError: 'numpy.ndarray' object has no attribute 'encode'
+2023-12-01 22:30:13.309 | INFO     | __main__:<module>:82 - Program start
+2023-12-01 22:30:15.775 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 22:30:16.006 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.2ms pre-process, 211.0ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 22:30:16.137 | INFO     | __main__:detect_card:55 - Detect card successfully
+2023-12-01 22:30:30.250 | INFO     | __main__:<module>:83 - Program start
+2023-12-01 22:30:32.669 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 22:30:32.836 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 7.8ms pre-process, 141.2ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 22:30:41.472 | INFO     | __main__:detect_card:56 - Detect card successfully
+2023-12-01 22:31:25.912 | INFO     | __main__:<module>:83 - Program start
+2023-12-01 22:31:28.316 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 22:31:28.480 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.2ms pre-process, 145.0ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 22:31:33.624 | INFO     | __main__:detect_card:56 - Detect card successfully
+2023-12-01 22:31:54.246 | INFO     | __main__:<module>:83 - Program start
+2023-12-01 22:31:56.946 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 22:31:57.164 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.9ms pre-process, 197.6ms inference, 1.8ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 22:32:02.181 | INFO     | __main__:detect_card:56 - Detect card successfully
+2023-12-01 22:32:14.577 | INFO     | __main__:<module>:83 - Program start
+2023-12-01 22:32:16.982 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 22:32:17.215 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 5.7ms pre-process, 209.2ms inference, 2.0ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 22:32:54.293 | INFO     | __main__:detect_card:56 - Detect card successfully
+2023-12-01 22:33:06.986 | INFO     | __main__:<module>:83 - Program start
+2023-12-01 22:33:09.555 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 22:33:09.745 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.2ms pre-process, 167.8ms inference, 2.8ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 22:33:24.754 | INFO     | __main__:<module>:83 - Program start
+2023-12-01 22:33:27.096 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 22:33:27.270 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 5.5ms pre-process, 150.5ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 22:33:30.855 | INFO     | __main__:detect_card:56 - Detect card successfully
+2023-12-01 22:33:42.557 | INFO     | __main__:<module>:83 - Program start
+2023-12-01 22:33:44.940 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 22:33:45.126 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.5ms pre-process, 164.8ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 22:33:52.068 | INFO     | __main__:detect_card:56 - Detect card successfully
+2023-12-01 22:33:56.683 | INFO     | __main__:<module>:83 - Program start
+2023-12-01 22:33:59.230 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-01 22:33:59.427 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.5ms pre-process, 176.8ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-01 22:34:05.862 | INFO     | __main__:detect_card:56 - Detect card successfully
+2023-12-02 08:14:44.491 | INFO     | __main__:<module>:83 - Program start
+2023-12-02 08:14:50.863 | INFO     | __main__:__init__:21 - The VertinsEye is initialized successfully
+2023-12-02 08:14:51.124 | INFO     | __main__:detect_card:35 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 7.5ms pre-process, 218.6ms inference, 10.3ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:14:56.596 | INFO     | __main__:detect_card:56 - Detect card successfully
+2023-12-02 08:22:11.869 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:22:14.418 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:22:14.587 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.1ms pre-process, 147.8ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:22:20.543 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:22:40.833 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:22:43.517 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:22:43.699 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 8.5ms pre-process, 156.5ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:22:48.055 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:22:58.303 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:23:00.856 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:23:01.099 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.2ms pre-process, 220.3ms inference, 2.1ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:23:05.748 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:23:13.393 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:23:15.775 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:23:15.934 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.3ms pre-process, 144.4ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:23:19.585 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:26:07.628 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:26:10.105 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:26:10.366 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.7ms pre-process, 235.9ms inference, 2.1ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:26:13.107 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:26:32.424 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:26:34.788 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:26:34.985 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 7.8ms pre-process, 171.6ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:26:37.880 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:27:07.588 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:27:09.991 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:27:10.235 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 5.3ms pre-process, 219.8ms inference, 1.9ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:27:12.330 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:27:23.920 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:27:26.354 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:27:26.543 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.7ms pre-process, 170.7ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:27:30.767 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:27:40.158 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:27:42.493 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:27:42.681 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.0ms pre-process, 168.3ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:27:44.970 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:28:00.727 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:28:03.189 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:28:03.357 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.0ms pre-process, 146.8ms inference, 2.3ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:28:06.576 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:28:18.940 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:28:21.415 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:28:21.600 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.8ms pre-process, 162.1ms inference, 1.7ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:28:28.718 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:28:31.312 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:28:33.849 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:28:34.052 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.4ms pre-process, 179.8ms inference, 3.3ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:28:49.316 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:28:51.670 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:28:51.859 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.9ms pre-process, 166.6ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:28:58.789 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:30:02.905 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:30:05.459 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:30:05.723 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.4ms pre-process, 237.6ms inference, 3.4ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:30:10.559 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:30:22.425 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:30:25.044 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:30:25.269 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.6ms pre-process, 199.5ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:30:28.395 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:30:34.731 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:30:37.169 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:30:37.356 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 7.6ms pre-process, 160.1ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:31:07.183 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:31:17.920 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:31:20.660 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:31:20.940 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.3ms pre-process, 249.9ms inference, 2.1ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:31:32.581 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:31:34.906 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:31:35.087 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.8ms pre-process, 158.6ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:31:46.104 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:31:56.130 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:31:58.830 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:31:59.015 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.6ms pre-process, 166.2ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:32:02.477 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:32:11.783 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:32:14.214 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:32:14.454 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.3ms pre-process, 218.8ms inference, 1.9ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:32:19.025 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:32:40.646 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:32:43.538 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:32:43.780 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 5.4ms pre-process, 217.9ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:32:50.633 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:32:59.550 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:33:02.234 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:33:02.418 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.1ms pre-process, 165.1ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:33:06.998 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:33:22.250 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:33:24.702 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:33:24.865 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.9ms pre-process, 141.6ms inference, 2.3ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:33:29.411 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:33:36.486 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:33:38.861 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:33:39.041 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.4ms pre-process, 155.6ms inference, 2.2ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:33:44.087 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:33:54.684 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:33:57.078 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:33:57.270 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.3ms pre-process, 170.8ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:34:02.741 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:34:11.497 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:34:13.964 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:34:14.197 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.9ms pre-process, 212.3ms inference, 2.0ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:34:18.632 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:34:32.079 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:34:34.649 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:34:34.850 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.7ms pre-process, 179.6ms inference, 1.8ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:34:48.374 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:34:50.732 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:34:50.903 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.0ms pre-process, 151.0ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:34:53.833 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:35:01.565 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:35:04.036 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:35:04.255 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.1ms pre-process, 198.2ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:35:06.421 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:35:13.076 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:35:15.491 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:35:15.656 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.3ms pre-process, 144.6ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:35:19.386 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:35:34.108 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:35:36.493 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:35:36.683 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 5.0ms pre-process, 168.4ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:35:38.933 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:35:48.146 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:35:50.546 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:35:50.741 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.0ms pre-process, 174.8ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:35:53.480 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:36:04.489 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:36:06.927 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:36:07.102 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.9ms pre-process, 155.7ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:36:14.695 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:36:32.353 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:36:34.766 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:36:34.948 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.1ms pre-process, 161.5ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:36:37.979 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:36:44.830 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:36:47.202 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:36:47.365 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.8ms pre-process, 141.0ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:36:50.111 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:36:55.594 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:36:58.005 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:36:58.170 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.9ms pre-process, 145.9ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:37:04.738 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:38:31.761 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:38:34.490 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:38:34.713 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.1ms pre-process, 203.2ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:38:37.459 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:39:21.178 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:39:23.584 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:39:23.775 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.7ms pre-process, 169.9ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:39:28.296 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:39:40.122 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:39:42.505 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:39:42.678 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 5.3ms pre-process, 151.7ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:39:46.589 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:39:54.761 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:39:57.421 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:39:57.622 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.9ms pre-process, 176.8ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:40:01.361 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:40:08.391 | INFO     | __main__:<module>:94 - Program start
+2023-12-02 08:40:10.789 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:40:10.969 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.9ms pre-process, 157.3ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:40:15.924 | INFO     | __main__:detect_card:67 - Detect card successfully
+2023-12-02 08:42:58.338 | INFO     | __main__:<module>:96 - Program start
+2023-12-02 08:43:00.756 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:43:00.929 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.8ms pre-process, 151.4ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:43:08.225 | INFO     | __main__:detect_card:69 - Detect card successfully
+2023-12-02 08:43:16.222 | INFO     | __main__:<module>:96 - Program start
+2023-12-02 08:43:18.794 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:43:18.972 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.6ms pre-process, 158.7ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:43:21.412 | INFO     | __main__:detect_card:69 - Detect card successfully
+2023-12-02 08:43:31.146 | INFO     | __main__:<module>:96 - Program start
+2023-12-02 08:43:33.582 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:43:33.839 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 7.6ms pre-process, 233.5ms inference, 1.9ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:43:43.826 | INFO     | __main__:detect_card:69 - Detect card successfully
+2023-12-02 08:43:55.280 | INFO     | __main__:<module>:96 - Program start
+2023-12-02 08:43:58.139 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:43:58.372 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.3ms pre-process, 212.0ms inference, 1.9ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:44:05.232 | INFO     | __main__:detect_card:69 - Detect card successfully
+2023-12-02 08:44:26.040 | INFO     | __main__:<module>:96 - Program start
+2023-12-02 08:44:28.636 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:44:28.819 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 4.0ms pre-process, 163.0ms inference, 2.3ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:44:32.959 | INFO     | __main__:detect_card:69 - Detect card successfully
+2023-12-02 08:49:54.804 | INFO     | __main__:<module>:105 - Program start
+2023-12-02 08:49:57.147 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:49:57.336 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 5.7ms pre-process, 165.9ms inference, 2.4ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:50:05.773 | INFO     | __main__:detect_card:78 - Detect card successfully
+2023-12-02 08:50:44.026 | INFO     | __main__:<module>:105 - Program start
+2023-12-02 08:50:46.336 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:50:46.513 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 6.1ms pre-process, 153.8ms inference, 1.7ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:50:56.794 | INFO     | __main__:detect_card:78 - Detect card successfully
+2023-12-02 08:51:28.048 | INFO     | __main__:<module>:105 - Program start
+2023-12-02 08:51:30.440 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:51:30.602 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Sonetto3, 1 Satsuki2, 2 Satsuki3s
+Speed: 3.7ms pre-process, 142.7ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:51:35.667 | INFO     | __main__:detect_card:78 - Detect card successfully
+2023-12-02 08:52:42.820 | INFO     | __main__:<module>:105 - Program start
+2023-12-02 08:52:47.675 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:52:47.859 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 MedicinePocket2, 1 Voyager3, 1 Lilya1, 1 Click3, 1 Dikke2
+Speed: 3.7ms pre-process, 163.8ms inference, 1.8ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:52:47.861 | INFO     | __main__:detect_card:78 - Detect card successfully
+2023-12-02 08:53:14.834 | INFO     | __main__:<module>:105 - Program start
+2023-12-02 08:53:18.634 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:53:19.007 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 2 Anan1s, 1 Anan2, 1 MedicinePocket1, 2 MedicinePocket2s, 1 Regulus3, 1 Satsuki2, 1 Satsuki3
+Speed: 5.0ms pre-process, 335.8ms inference, 2.7ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:53:37.354 | INFO     | __main__:detect_card:78 - Detect card successfully
+2023-12-02 08:53:49.223 | INFO     | __main__:<module>:105 - Program start
+2023-12-02 08:53:53.891 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:53:54.139 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 2 Anan1s, 1 Anan2, 1 Eternity1, 1 MedicinePocket1, 1 MedicinePocket2, 1 Regulus3, 1 Satsuki2, 1 Satsuki3
+Speed: 4.6ms pre-process, 216.5ms inference, 2.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:53:57.464 | INFO     | __main__:detect_card:78 - Detect card successfully
+2023-12-02 08:54:36.602 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 08:54:40.714 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:54:41.009 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 2 Anan1s, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Regulus3, 1 Satsuki2, 1 Satsuki3
+Speed: 5.4ms pre-process, 251.4ms inference, 4.8ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:55:21.726 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 08:55:25.542 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:55:25.775 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan1, 1 Anan2, 1 MedicinePocket1, 1 MedicinePocket2, 1 Voyager2, 1 Regulus3, 1 Sonetto1, 1 Satsuki2, 1 Satsuki3, 1 Dikke2
+Speed: 6.2ms pre-process, 210.0ms inference, 1.9ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:55:30.536 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 08:56:31.651 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 08:56:35.360 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:56:35.541 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 Regulus3, 2 Satsuki2s, 2 Satsuki3s
+Speed: 4.3ms pre-process, 159.8ms inference, 3.2ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:56:40.595 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 08:57:13.783 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 08:57:17.455 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:57:17.629 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 Regulus3, 1 Sonetto1, 2 Satsuki2s, 3 Satsuki3s
+Speed: 4.0ms pre-process, 154.3ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:57:25.125 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 08:57:48.108 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 08:57:51.682 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:57:51.845 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 NewBabel2, 1 Regulus3, 2 Satsuki2s, 3 Satsuki3s
+Speed: 4.0ms pre-process, 143.5ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:57:57.079 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 08:58:10.517 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 08:58:14.218 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:58:14.398 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 NewBabel2, 1 Regulus3, 2 Satsuki2s, 2 Satsuki3s
+Speed: 5.1ms pre-process, 157.6ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:58:22.045 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 08:58:46.022 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 08:58:49.702 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:58:49.878 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 Eternity1, 1 MedicinePocket1, 1 MedicinePocket2, 1 Regulus3, 2 Satsuki2s, 3 Satsuki3s
+Speed: 4.1ms pre-process, 155.3ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:59:00.559 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 08:59:08.993 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 08:59:12.663 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:59:12.823 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 Regulus3, 2 Satsuki2s, 3 Satsuki3s
+Speed: 3.8ms pre-process, 140.8ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:59:17.035 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 08:59:27.750 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 08:59:31.349 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:59:31.513 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 2 MedicinePocket2s, 1 NewBabel2, 1 Regulus3, 1 X3, 2 Satsuki2s, 3 Satsuki3s
+Speed: 3.9ms pre-process, 144.0ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:59:38.200 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 08:59:43.606 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 08:59:47.354 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 08:59:47.542 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 NewBabel2, 1 Regulus3, 1 Sonetto3, 1 Tennant2, 2 Satsuki2s, 3 Satsuki3s
+Speed: 8.0ms pre-process, 163.8ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 08:59:50.531 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 10:30:07.838 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 10:30:14.020 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 10:30:14.227 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 NewBabel2, 1 Regulus3, 1 Sonetto3, 1 Tennant2, 2 Satsuki2s, 3 Satsuki3s
+Speed: 8.6ms pre-process, 163.9ms inference, 10.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 10:30:41.846 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 10:37:28.864 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 10:37:31.203 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 10:37:31.374 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 NewBabel2, 1 Regulus3, 1 Sonetto3, 1 Tennant2, 2 Satsuki2s, 3 Satsuki3s
+Speed: 3.4ms pre-process, 151.2ms inference, 1.5ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 10:37:34.222 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 10:41:05.942 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 10:41:08.250 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 10:41:08.433 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 NewBabel2, 1 Regulus3, 1 Sonetto3, 1 Tennant2, 2 Satsuki2s, 3 Satsuki3s
+Speed: 5.0ms pre-process, 159.4ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 10:41:11.102 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 10:41:25.531 | INFO     | __main__:<module>:103 - Program start
+2023-12-02 10:41:27.831 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 10:41:28.091 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 NewBabel2, 1 Regulus3, 1 Sonetto3, 1 Tennant2, 2 Satsuki2s, 3 Satsuki3s
+Speed: 4.0ms pre-process, 240.0ms inference, 2.0ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 10:41:31.702 | INFO     | __main__:detect_card:76 - Detect card successfully
+2023-12-02 10:44:31.297 | INFO     | __main__:<module>:104 - Program start
+2023-12-02 10:44:33.754 | INFO     | __main__:__init__:22 - The VertinsEye is initialized successfully
+2023-12-02 10:44:33.932 | INFO     | __main__:detect_card:36 - card detect: image 1/1: 1080x2400 1 Anan3, 1 MedicinePocket1, 1 MedicinePocket2, 1 NewBabel2, 1 Regulus3, 1 Sonetto3, 1 Tennant2, 2 Satsuki2s, 3 Satsuki3s
+Speed: 4.1ms pre-process, 156.9ms inference, 1.7ms NMS per image at shape (1, 3, 288, 640)
+2023-12-02 10:44:38.062 | INFO     | __main__:detect_card:77 - Detect card successfully

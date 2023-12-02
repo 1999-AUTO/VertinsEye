@@ -1,6 +1,7 @@
 import os
 import cv2,json
 import torch
+import numpy as np
 from pathlib import Path
 from loguru import logger
 
@@ -24,28 +25,52 @@ class VertinsEye:
     
     def detect_card(self,image,size):
         #card_area = image[720:1080,0:2400]
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # opencv读取图片为BGR格式，需要转换为RGB格式
+        input_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # opencv读取图片为BGR格式，需要转换为RGB格式
         torch_model = self.torch_model.to(self.device)
-        results = torch_model(image, size=size)#推理
+        results = torch_model(input_image, size=size)#推理
         card_info_list = []  # 用于存储所有卡牌信息的列表
 
         # cv2.imshow("image",image)
         # cv2.waitKey(0)
-
+        
         logger.info(f"card detect: {results}")#输出卡牌检测日志信息
         try:  # 尝试
             xyxy = results.pandas().xyxy[0].values
             xmins, ymins, xmaxs, ymaxs, class_list, confidences = xyxy[:, 0], xyxy[:, 1],\
                                                                     xyxy[:, 2], xyxy[:, 3], xyxy[:,5], xyxy[:, 4]
             for xmin, ymin, xmax, ymax, class_l, conf in zip(xmins, ymins, xmaxs, ymaxs, class_list, confidences):
-                if conf >= 0.5:
+                if conf >= 0.7:
+
+                    level_area = image[int(ymin)-45:int(ymax)-232,int(xmin):int(xmax)]
+                    Color_lower = np.array([3, 100, 100])
+                    Color_upper = np.array([30, 255, 255])
+
+                    hsv = cv2.cvtColor(level_area, cv2.COLOR_BGR2HSV)#HSV颜色设置
+                    mask = cv2.inRange(hsv, Color_lower, Color_upper)#提取在HSV范围内的图像
+                    
+                    level_contours = []
+                    contours, hierarchy = cv2.findContours(mask, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)#识别轮廓
+                    if len(contours) > 0:
+                        for i in range(0,len(contours)):
+                            #大招卡等级为0，大招卡的类别字符串中包含3
+                            if cv2.contourArea(contours[i]) >= 80 and str(get_id(class_l)) not in "3":
+                                level_contours.append(contours[i])
+                    else:
+                        logger.warning("Level Error")
+                    print(len(level_contours))
+                    print(get_id(class_l))
+                    
                     #整合单个卡牌信息
                     card_info = {
                         "class": get_id(class_l),
                         "position": [int(xmin), int(ymin), int(xmax), int(ymax),int(class_l)],
-                        "level" : 1,
+                        "level" : len(level_contours),
                     }
+                    
+                    
                     card_info_list.append(card_info)
+                    cv2.imshow("mask",mask)
+                    cv2.waitKey(0)
 
             with open('card_detect_info.json', 'w') as file:
                 json.dump(card_info_list, file, indent=4)

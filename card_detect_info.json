@@ -1,0 +1,57 @@
+[
+    {
+        "class": "MedicinePocket1",
+        "position": [
+            2126,
+            811,
+            2298,
+            1044,
+            9
+        ],
+        "level": 1
+    },
+    {
+        "class": "Satsuki3",
+        "position": [
+            1381,
+            820,
+            1559,
+            1050,
+            56
+        ],
+        "level": 1
+    },
+    {
+        "class": "MedicinePocket2",
+        "position": [
+            1945,
+            821,
+            2112,
+            1041,
+            10
+        ],
+        "level": 1
+    },
+    {
+        "class": "Satsuki3",
+        "position": [
+            1567,
+            822,
+            1744,
+            1055,
+            56
+        ],
+        "level": 2
+    },
+    {
+        "class": "Anan3",
+        "position": [
+            1205,
+            755,
+            1377,
+            1050,
+            2
+        ],
+        "level": 0
+    }
+]
