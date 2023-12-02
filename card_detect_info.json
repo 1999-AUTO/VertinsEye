@@ -1,57 +1,68 @@
 [
     {
-        "class": "MedicinePocket1",
+        "class": "Anan3",
         "position": [
-            2126,
-            811,
-            2298,
-            1044,
-            9
+            1397,
+            780,
+            1557,
+            1047,
+            2
         ],
-        "level": 1
+        "level": 0
     },
     {
-        "class": "Satsuki3",
+        "class": "Bkornblume2",
         "position": [
-            1381,
-            820,
-            1559,
-            1050,
-            56
-        ],
-        "level": 1
-    },
-    {
-        "class": "MedicinePocket2",
-        "position": [
-            1945,
+            1762,
             821,
-            2112,
-            1041,
-            10
+            1930,
+            1054,
+            7
         ],
         "level": 1
     },
     {
-        "class": "Satsuki3",
+        "class": "X1",
         "position": [
-            1567,
-            822,
-            1744,
-            1055,
-            56
+            2130,
+            818,
+            2295,
+            1048,
+            45
+        ],
+        "level": 1
+    },
+    {
+        "class": "Bkornblume2",
+        "position": [
+            1203,
+            815,
+            1378,
+            1054,
+            7
+        ],
+        "level": 1
+    },
+    {
+        "class": "Bkornblume1",
+        "position": [
+            1568,
+            818,
+            1742,
+            1056,
+            6
         ],
         "level": 2
     },
     {
-        "class": "Anan3",
+        "class": "X2",
         "position": [
-            1205,
-            755,
-            1377,
-            1050,
-            2
+            1945,
+            819,
+            2108,
+            1049,
+            46
         ],
-        "level": 0
+        "level": 1
     }
 ]
