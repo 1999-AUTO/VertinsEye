@@ -1,0 +1,49 @@
+2023-12-03 15:30:51.645 | INFO     | __main__:<module>:124 - Program start
+2023-12-03 15:30:54.148 | INFO     | __main__:__init__:24 - The VertinsEye is initialized successfully
+2023-12-03 15:30:54.398 | INFO     | __main__:detect_card:37 - card detect: image 1/1: 1080x2400 1 Anan3, 1 Eternity1, 2 Bkornblume1s, 2 Bkornblume2s, 2 Regulus2s, 1 Sonetto3, 1 X1, 1 X2
+Speed: 7.0ms pre-process, 220.5ms inference, 2.0ms NMS per image at shape (1, 3, 288, 640)
+2023-12-03 15:30:54.401 | INFO     | __main__:detect_card:80 - Detect card successfully
+2023-12-03 15:33:04.881 | INFO     | __main__:<module>:124 - Program start
+2023-12-03 15:33:07.377 | INFO     | __main__:__init__:24 - The VertinsEye is initialized successfully
+2023-12-03 15:33:07.573 | INFO     | __main__:detect_card:37 - card detect: image 1/1: 1080x2400 1 Anan3, 1 Eternity1, 2 Bkornblume1s, 2 Bkornblume2s, 2 Regulus2s, 1 Sonetto3, 1 X1, 1 X2
+Speed: 5.2ms pre-process, 172.0ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-03 15:33:07.576 | ERROR    | __main__:detect_card:83 - Detect card failed: 'dict' object has no attribute 'key'
+Traceback (most recent call last):
+
+  File "/home/gavin/VertinsEye/detect.py", line 136, in <module>
+    cards = VertinsEye_Card.detect_card(image,640,0.8)
+            │               │           └ array([[[72, 63, 55],
+            │               │                     [72, 63, 55],
+            │               │                     [71, 62, 54],
+            │               │                     ...,
+            │               │                     [59, 42, 35],
+            │               │                     [59, 42, 34],
+            │               │               ...
+            │               └ <function VertinsEye.detect_card at 0x7f492d029f70>
+            └ <__main__.VertinsEye object at 0x7f492d02b790>
+
+> File "/home/gavin/VertinsEye/detect.py", line 76, in detect_card
+    print(card_info_list[0].key('position'))
+          └ [{'class': 'Anan3', 'position': [1397, 780, 1557, 1047, 2], 'level': 0}, {'class': 'Bkornblume2', 'position': [1762, 821, 193...
+
+AttributeError: 'dict' object has no attribute 'key'
+2023-12-03 15:35:45.109 | INFO     | __main__:<module>:124 - Program start
+2023-12-03 15:35:47.660 | INFO     | __main__:__init__:24 - The VertinsEye is initialized successfully
+2023-12-03 15:35:47.923 | INFO     | __main__:detect_card:37 - card detect: image 1/1: 1080x2400 1 Anan3, 1 Eternity1, 2 Bkornblume1s, 2 Bkornblume2s, 2 Regulus2s, 1 Sonetto3, 1 X1, 1 X2
+Speed: 4.4ms pre-process, 236.2ms inference, 2.3ms NMS per image at shape (1, 3, 288, 640)
+2023-12-03 15:35:47.929 | INFO     | __main__:detect_card:80 - Detect card successfully
+2023-12-03 15:40:00.009 | INFO     | __main__:<module>:125 - Program start
+2023-12-03 15:40:02.947 | INFO     | __main__:__init__:24 - The VertinsEye is initialized successfully
+2023-12-03 15:40:03.176 | INFO     | __main__:detect_card:37 - card detect: image 1/1: 1080x2400 1 Anan3, 1 Eternity1, 2 Bkornblume1s, 2 Bkornblume2s, 2 Regulus2s, 1 Sonetto3, 1 X1, 1 X2
+Speed: 5.4ms pre-process, 204.1ms inference, 1.6ms NMS per image at shape (1, 3, 288, 640)
+2023-12-03 15:40:03.180 | INFO     | __main__:detect_card:81 - Detect card successfully
+2023-12-03 15:41:28.209 | INFO     | __main__:<module>:125 - Program start
+2023-12-03 15:41:30.680 | INFO     | __main__:__init__:24 - The VertinsEye is initialized successfully
+2023-12-03 15:41:30.894 | INFO     | __main__:detect_card:37 - card detect: image 1/1: 1080x2400 1 Anan3, 1 Eternity1, 2 Bkornblume1s, 2 Bkornblume2s, 2 Regulus2s, 1 Sonetto3, 1 X1, 1 X2
+Speed: 3.8ms pre-process, 186.3ms inference, 3.0ms NMS per image at shape (1, 3, 288, 640)
+2023-12-03 15:41:30.903 | INFO     | __main__:detect_card:81 - Detect card successfully
+2023-12-03 15:42:32.559 | INFO     | __main__:<module>:125 - Program start
+2023-12-03 15:42:35.145 | INFO     | __main__:__init__:24 - The VertinsEye is initialized successfully
+2023-12-03 15:42:35.327 | INFO     | __main__:detect_card:37 - card detect: image 1/1: 1080x2400 1 Anan3, 1 Eternity1, 2 Bkornblume1s, 2 Bkornblume2s, 2 Regulus2s, 1 Sonetto3, 1 X1, 1 X2
+Speed: 3.7ms pre-process, 162.1ms inference, 1.9ms NMS per image at shape (1, 3, 288, 640)
+2023-12-03 15:42:35.330 | INFO     | __main__:detect_card:81 - Detect card successfully
